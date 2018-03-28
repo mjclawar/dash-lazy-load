@@ -5,7 +5,8 @@ StratoDem Analytics Dash implementation of `react-lazyload`
 Dash wrappers around the excellent [`react-lazyload`](https://github.com/jasonslylvia/react-lazyload) package
 
 ### Examples
-
+![Lazy Load Example](https://github.com/mjclawar/dash-lazy-load/blob/master/LazyLoadExample.gif)
+The blue border component loads in after a debounce period on scroll(!)
 
 ### Dash
 
