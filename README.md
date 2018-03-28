@@ -1,10 +1,13 @@
-# sd-material-ui
+# dash-lazy-load
 
 StratoDem Analytics Dash implementation of `react-lazyload`
 
 Dash wrappers around the excellent [`react-lazyload`](https://github.com/jasonslylvia/react-lazyload) package
 
-## Dash
+### Examples
+
+
+### Dash
 
 Go to this link to learn about [Dash][].
 
@@ -37,5 +40,5 @@ $ python usage.py
 [dash-components-archetype]: https://github.com/plotly/dash-components-archetype
 
 ### Contributors
-https://github.com/mjclawar
-https://github.com/wchaering
+[@mjclawar](https://github.com/mjclawar)
+[@wchaering](https://github.com/wchaering)
