@@ -1,0 +1,5 @@
+include dash_lazy_load/bundle.js
+include dash_lazy_load/bundle.js.map
+include dash_lazy_load/metadata.json
+include README.md
+include LICENSE.md

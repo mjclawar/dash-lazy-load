@@ -1,0 +1,75 @@
+{
+  "name": "dash-lazy-load",
+  "version": "2.6.1",
+  "description": "Dash implementation of react-lazyload",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StratoDem/dash-lazy-load.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StratoDem/dash-lazy-load/issues"
+  },
+  "homepage": "https://github.com/StratoDem/dash-lazy-load",
+  "scripts": {
+    "extract-metadata": "mkdirp lib && react-docgen --pretty -e index.js -o lib/metadata.json src && node -e \"const fs = require('fs'); const path = require('path'); const m = JSON.parse(fs.readFileSync('./lib/metadata.json')); const r = {}; Object.keys(m).forEach(k => r[k.split(path.sep).join('/')] = m[k]); fs.writeFileSync('./lib/metadata.json', JSON.stringify(r, '\t', 2));\"",
+    "build-dist": "builder run clean-lib && builder run extract-metadata && webpack --config=config/webpack.config.dev.js --display-error-details",
+    "build-dist-production": "builder run clean-lib && builder run extract-metadata && webpack -p --config=config/webpack.config.dist.js",
+    "copy-lib": "copyfiles -u 1 lib/* dash_lazy_load",
+    "install-local": "npm run copy-lib && venv/bin/python setup.py install",
+    "prepublish": "npm test && npm run build-dist-production && npm run copy-lib",
+    "start": "npm run build-dist && npm run copy-lib",
+    "test": "jest --verbose",
+    "uninstall-local": "pip uninstall dash-lazy-load -y"
+  },
+  "dependencies": {
+    "babel-loader": "^7.1.2",
+    "builder": "^3.2.2",
+    "copyfiles": "^1.2.0",
+    "dash-components-archetype": "^0.2.11",
+    "ify-loader": "^1.1.0",
+    "prop-types": "^15.6.0",
+    "react-lazyload": "^2.3.0",
+    "webpack": "^3.8.1"
+  },
+  "devDependencies": {
+    "@stratodem/js-archetype": "^1.9.0",
+    "compression-webpack-plugin": "^1.0.1",
+    "dash-components-archetype-dev": "^0.2.11",
+    "dezalgo": "^1.0.3",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-to-json": "^3.2.2",
+    "flow-bin": "^0.61.0",
+    "git-labelmaker": "^0.9.0",
+    "jest": "^22.0.4",
+    "react": "^15.4",
+    "react-dom": "^15.4",
+    "react-test-renderer": "^15.4"
+  },
+  "jest": {
+    "modulePaths": [
+      "<rootDir>/src/js"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    },
+    "testRegex": "\\.test\\.js$",
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>test/_test-env.js"
+    ],
+    "collectCoverage": true,
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "src/LazyLoad.react.js": {
+    "description": "",
+    "displayName": "LazyLoad",
+    "methods": [],
+    "props": {
+      "children": {
+        "flowType": {
+          "name": "Node"
+        },
+        "required": false,
+        "description": "Children to render in the LazyLoad component ONLY ONE ALLOWED",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "id": {
+        "flowType": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "id for the LazyLoad component",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "height": {
+        "flowType": {
+          "name": "union",
+          "raw": "number | string",
+          "elements": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "In the first round of render, LazyLoad will render a placeholder for your component if no\nplaceholder is provided and measure if this component is visible. Set height properly will\nmake LazyLoad calculate more precisely. The value can be number or string like '100%'. You\ncan also use css to set the height of the placeholder instead of using height.",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "once": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Once the lazy loaded component is loaded, do not detect scroll/resize event anymore. Useful\nfor images or simple components.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "offset": {
+        "flowType": {
+          "name": "union",
+          "raw": "number | Array<number>",
+          "elements": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "number"
+                }
+              ],
+              "raw": "Array<number>"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Say if you want to preload a component even if it's 100px below the viewport (user have to\nscroll 100px more to see this component), you can set offset props to 100. On the other hand,\nif you want to delay loading a component even if it's top edge has already appeared at\nviewport, set offset to negative number.\n\nIf you provide this props with array like [200, 200], it will set top edge offset and bottom\nedge offset respectively.",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "scroll": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Listen and react to scroll event",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "resize": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "Response to `resizze` event, set it to `true` if you do need LazyLoad listen resize event",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "overflow": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "If lazy loading components inside a overflow container, set this to true. Also make sure a\nposition property other than static has been set to your overflow container.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "placeholder": {
+        "flowType": {
+          "name": "any"
+        },
+        "required": false,
+        "description": "Placeholder for the lazy-loaded component",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "unmountIfInvisible": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "The lazy loaded component is unmounted and replaced by the placeholder when it is no longer\nvisible in the viewport.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "debounce": {
+        "flowType": {
+          "name": "union",
+          "raw": "number | boolean",
+          "elements": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "boolean"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Lazyload will try to use passive event by default to improve scroll/resize event handler's\nperformance. If you prefer control this behaviour by yourself, you can set debounce or\nthrottle to enable built in delay feature.\n\nIf you provide a number, that will be how many ms to wait; if you provide true, the wait time\ndefaults to 300ms.\n\nNOTICE Set debounce / throttle to all lazy loaded components unanimously, if you don't,\nthe first occurrence is respected.",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "throttle": {
+        "flowType": {
+          "name": "union",
+          "raw": "number | boolean",
+          "elements": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "boolean"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Lazyload will try to use passive event by default to improve scroll/resize event handler's\nperformance. If you prefer control this behaviour by yourself, you can set debounce or\nthrottle to enable built in delay feature.\n\nIf you provide a number, that will be how many ms to wait; if you provide true, the wait time\ndefaults to 300ms.\n\nNOTICE Set debounce / throttle to all lazy loaded components unanimously, if you don't,\nthe first occurrence is respected.",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      }
+    }
+  }
+}
