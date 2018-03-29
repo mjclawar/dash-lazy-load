@@ -1,6 +1,6 @@
 {
   "name": "dash-lazy-load",
-  "version": "2.6.1",
+  "version": "1.0.0",
   "description": "Dash implementation of react-lazyload",
   "main": "lib/index.js",
   "repository": {
