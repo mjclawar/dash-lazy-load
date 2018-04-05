@@ -5,13 +5,18 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/StratoDem/dash-lazy-load.git"
+    "url": "https://github.com/mjclawar/dash-lazy-load.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/StratoDem/dash-lazy-load/issues"
+    "url": "https://github.com/mjclawar/dash-lazy-load/issues"
   },
-  "homepage": "https://github.com/StratoDem/dash-lazy-load",
+  "author": {
+    "name": "Michael Clawar",
+    "email": "michael@stratodem.com",
+    "url": "mjclawar.github.io"
+  },
+  "homepage": "https://github.com/mjclawar/dash-lazy-load",
   "scripts": {
     "extract-metadata": "mkdirp lib && react-docgen --pretty -e index.js -o lib/metadata.json src && node -e \"const fs = require('fs'); const path = require('path'); const m = JSON.parse(fs.readFileSync('./lib/metadata.json')); const r = {}; Object.keys(m).forEach(k => r[k.split(path.sep).join('/')] = m[k]); fs.writeFileSync('./lib/metadata.json', JSON.stringify(r, '\t', 2));\"",
     "build-dist": "builder run clean-lib && builder run extract-metadata && webpack --config=config/webpack.config.dev.js --display-error-details",
