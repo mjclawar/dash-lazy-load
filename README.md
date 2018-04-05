@@ -1,10 +1,38 @@
 # dash-lazy-load
 
-StratoDem Analytics Dash implementation of `react-lazyload`
+Large dash apps taking forever to initially render on page load? `dash-lazy-load` wraps Dash components with lazy loading that only render in the page when scrolled or resized into view!
 
-Dash wrappers around the excellent [`react-lazyload`](https://github.com/jasonslylvia/react-lazyload) package
+This package creates a Dash wrapper around the excellent [`react-lazyload`](https://github.com/jasonslylvia/react-lazyload) package.
 
-### Examples
+### Get started
+`$ pip install dash-lazy-load`
+
+To get simple lazy loading set up, the only change necessary is to wrap a Dash components with `dash_lazy_load.LazyLoad`. 
+
+```python
+
+import dash_lazy_load
+import dash
+import dash_html_components as html
+
+app = dash.Dash('')
+
+app.scripts.config.serve_locally = True
+
+
+app.layout = html.Div([
+    html.Div('Testing', style=dict(height=1200)),
+    dash_lazy_load.LazyLoad(
+        html.Div('I loaded in lazily!!', style=dict(border='5px solid blue')),
+        height=500,
+        debounce=1000)
+])
+
+
+if __name__ == '__main__':
+app.run_server(debug=True)
+```
+
 ![Lazy Load Example](https://github.com/mjclawar/dash-lazy-load/blob/master/LazyLoadExample.gif)
 The blue border component loads in after a debounce period on scroll(!)
 
