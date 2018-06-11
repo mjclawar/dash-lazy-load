@@ -26,6 +26,11 @@ _this_module = _sys.modules[__name__]
 
 _js_dist = [
     {
+        'external_url': 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js',
+        'relative_package_path': 'lodash.min.js',
+        'namespace': 'dash_core_components'
+    },
+    {
         "relative_package_path": "bundle.js",
         "external_url": (
             "https://unpkg.com/dash-lazy-load@{}"

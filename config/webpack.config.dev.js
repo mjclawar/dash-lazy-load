@@ -61,6 +61,8 @@ module.exports = {
     // Use external version of React
     react: "React",
     'react-dom': 'ReactDOM',
+    lodash: 'lodash',
+    '_': 'lodash',
   },
   watchOptions: {
     poll: 500,
