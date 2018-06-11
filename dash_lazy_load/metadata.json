@@ -36,12 +36,21 @@
       },
       "debouncedVals": {
         "flowType": {
-          "name": "Object"
+          "name": "union",
+          "raw": "Object | number",
+          "elements": [
+            {
+              "name": "Object"
+            },
+            {
+              "name": "number"
+            }
+          ]
         },
         "required": false,
         "description": "",
         "defaultValue": {
-          "value": "{}",
+          "value": "0",
           "computed": false
         }
       },
@@ -51,6 +60,17 @@
         },
         "required": false,
         "description": ""
+      },
+      "sendTrueValue": {
+        "flowType": {
+          "name": "boolean"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
       },
       "setProps": {
         "flowType": {

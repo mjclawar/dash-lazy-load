@@ -15,7 +15,7 @@ app.layout = html.Div([
         height=500,
         debounce=1000),
 
-    dash_lazy_load.Debouncer(id='debouncer', debounce=2000),
+    dash_lazy_load.Debouncer(id='debouncer', debounce=2000, sendTrueValue=False),
     html.Button('A button!', id='my-button'),
     html.Div('', id='my-output'),
 ])
