@@ -31,7 +31,7 @@
   "dependencies": {
     "babel-loader": "^8.0.0",
     "builder": "^4.0.0",
-    "copyfiles": "^1.2.0",
+    "copyfiles": "^2.0.0",
     "dash-components-archetype": "^0.2.11",
     "ify-loader": "^1.1.0",
     "prop-types": "^15.6.0",
