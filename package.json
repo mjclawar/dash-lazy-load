@@ -29,7 +29,7 @@
     "uninstall-local": "pip uninstall dash-lazy-load -y"
   },
   "dependencies": {
-    "babel-loader": "^8.0.0",
+    "babel-loader": "^7.1.2",
     "builder": "^4.0.0",
     "copyfiles": "^1.2.0",
     "dash-components-archetype": "^0.2.11",
@@ -43,7 +43,7 @@
     "compression-webpack-plugin": "1.1.11",
     "dash-components-archetype-dev": "0.2.11",
     "dezalgo": "1.0.3",
-    "enzyme": "3.3.0",
+    "enzyme": "3.8.0",
     "enzyme-adapter-react-15": "1.0.5",
     "enzyme-to-json": "3.3.3",
     "flow-bin": "0.61.0",
