@@ -6,7 +6,7 @@ import dash_html_components as html
 
 app = dash.Dash('')
 app.scripts.config.serve_locally = True
-
+app.css.config.serve_locally = True
 
 app.layout = html.Div([
     html.Div('Testing', style=dict(height=1200)),

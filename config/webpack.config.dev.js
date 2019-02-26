@@ -8,6 +8,7 @@ const nodeModulesPath = path.join(__dirname, '../node_modules/');
 
 module.exports = {
   context: sourcePath,
+  mode: 'development',
   entry: {
     // relative to sourcePath
     bundle: './index',
@@ -61,8 +62,12 @@ module.exports = {
     // Use external version of React
     react: "React",
     'react-dom': 'ReactDOM',
-    lodash: 'lodash',
-    '_': 'lodash',
+    // 'lodash': {
+    //   commonjs: 'lodash',
+    //   commonjs2: 'lodash',
+    //   amd: 'lodash',
+    //   root: '_',
+    // },
   },
   watchOptions: {
     poll: 500,

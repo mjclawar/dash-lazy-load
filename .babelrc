@@ -1,3 +1,23 @@
 {
-  "extends": "./node_modules/@stratodem/js-archetype/.babelrc"
+    "presets": [
+        "@babel/react",
+        "@babel/preset-flow",
+        [
+            "@babel/preset-env",
+            {
+                "modules": false
+            }
+        ]
+    ],
+    "plugins": [
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-transform-react-jsx",
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "regenerator": true
+            }
+        ],
+        "@babel/plugin-proposal-class-properties"
+    ]
 }

@@ -1,6 +1,8 @@
 // @flow
 
 import React from 'react';
+import { isEqual, debounce } from 'lodash';
+
 
 type Props = {
   inputVals?: Object,
@@ -28,7 +30,7 @@ export default class Debouncer extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
 
-    this.updateDebouncedVals = window._.debounce(this._updateDebouncedVals, this.props.debounce);
+    this.updateDebouncedVals = debounce(this._updateDebouncedVals, this.props.debounce);
   }
 
   _updateDebouncedVals = () => {
@@ -41,7 +43,7 @@ export default class Debouncer extends React.Component<Props> {
 
   componentDidUpdate(prevProps: Props) {
     if (typeof this.props.setProps === 'function'
-      && !window._.isEqual(this.props.inputVals, prevProps.inputVals)) {
+      && !isEqual(this.props.inputVals, prevProps.inputVals)) {
       this.updateDebouncedVals();
     }
   }
