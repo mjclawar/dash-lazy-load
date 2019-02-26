@@ -5,7 +5,6 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   ...config,
-  mode: 'production',
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
