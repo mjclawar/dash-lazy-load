@@ -2,6 +2,6 @@
 
 -e .
 
-dash==1.0.0
+dash
 dash-html-components
 dash-renderer
