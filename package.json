@@ -36,7 +36,7 @@
     "ify-loader": "^1.1.0",
     "prop-types": "^15.6.0",
     "react-lazyload": "^2.3.0",
-    "webpack": "^3.8.1"
+    "webpack": "^4.0.0"
   },
   "devDependencies": {
     "@stratodem/js-archetype": "^1.9.0",
